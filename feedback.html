@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+
+    <style>
+        body {
+            background-image: linear-gradient(to right, yellowgreen, lightgreen);
+        }
+
+        .mainn {
+            background-color: white;
+            text-align: center;
+            border: 2px solid black;
+            margin-left: 300px;
+            margin-right: 300px;
+            margin-top: 100px;
+        }
+
+        #input {
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: groove;
+            background-color: #eee;
+            width: 40%;
+            padding: 1%;
+            border-width: 3px;
+        }
+
+        #submit1 {
+            font-style: normal;
+            transition: transform 0.2s ease;
+
+        }
+
+        #submit1:hover {
+            border-radius: 10%;
+            transform: scale(1.3);
+        }
+    </style>
+
+    <script>
+
+        function check() {
+
+            if (!checkEmail(document.frm.txtEmail.value == "")) {
+                alert("Enter Valid E-mail Address");
+                document.frm.txtEmail.focus();
+                document.frm.txtEmail.select();
+                return false;
+            }
+
+            function checkEmail(frm) {
+                if (/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/.test(document.frm.txtEmail.value)) {
+                    return (true);
+                }
+                return (false);
+            }
+
+            if (document.frm.txtps1.value == "") {
+                alert("Enter Password");
+                document.frm.txtps1.focus();
+                return false;
+            }
+
+            if (document.frm.txtps1.value.length < 6) {
+                alert("Enter Password in length six");
+                document.frm.txtps1.focus();
+                document.frm.txtps1.select();
+                return false;
+            }
+
+            if (document.frm.txtps1.value != "vehicle") {
+                alert("Enter velid Password ");
+                document.frm.txtps1.focus();
+                document.frm.txtps1.select();
+                return false;
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <main>
+
+        <div class="mainn">
+            <h1>Feedback</h1>
+            <hr><br>
+
+            <h3>Give your feedback</h3>
+            <textarea id="w3review" name="w3review" rows="7" cols="90"></textarea>
+            <br><br><br>
+
+            <form action="index.html" name="frm" method="post">
+
+                <span class="flexx">
+                    <input placeholder="Email" type="text" id="input" name="txtEmail"><br><br>
+
+                    <input placeholder="passwold" type="password" id="input" name="txtps1"><br><br>
+                </span>
+
+                <input type="submit" id="submit1" value="SUBMIT" onclick="return check()"><br><br>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

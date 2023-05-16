@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+
+    <style>
+        body {
+            height: 100%;
+            position: relative;
+            background-color: rgb(119, 158, 255);
+        }
+
+        .border {
+            text-align: center;
+            border: 1px solid black;
+            position: relative;
+            margin-left: 30%;
+            margin-right: 30%;
+            margin-top: 55px;
+            background-color: white;
+        }
+
+        #input1 {
+            border: 3px solid black;
+            width: 40%;
+            padding: 10px;
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            background-color: #eee;
+        }
+
+        #submit1 {
+            background-color: white;
+            width: 100px;
+            height: 30px;
+            font-style: normal;
+            transition: transform 0.2s;
+        }
+
+        #submit1:hover {
+            transform: scale(1.2);
+        }
+
+        .form_choose {
+            margin-top: 4%;
+            margin-bottom: 1%;
+        }
+
+        #Question {
+            border: 1px solid transparent;
+            padding: 0%;
+            transition: transform 0.2s;
+
+        }
+
+        #Question:hover {
+            border: 1px solid black;
+            transform: scale(1.2);
+        }
+    </style>
+    <script>
+
+        function check() {
+
+            var n2 = document.frm.txttel.value;
+            var numbers = /^[0-9]+$/;
+            var letters = /^[A-Za-z]+$/;
+
+            if (document.frm.txtfn.value == "") {
+                alert("Enter first name");
+                document.frm.txtfn.focus();
+                return false;
+            }
+
+            if (document.frm.txttel.value == "") {
+                alert("Enter your number");
+                document.frm.txttel.focus();
+                return false;
+            }
+
+            if (!n2.match(numbers)) {
+                alert("Only numbers allow");
+                document.frm.txttel.select();
+                return false;
+            }
+
+            if (!checkEmail(document.frm.txtEmail.value)) {
+                alert("Enter Valid E-mail Address");
+                document.frm.txtEmail.focus();
+                document.frm.txtEmail.select();
+                return false;
+            }
+
+            function checkEmail(frm) {
+                if (/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/.test(document.frm.txtEmail.value)) {
+                    return (true)
+                }
+                return (false)
+            }
+
+            if (document.frm.txtps1.value == "") {
+                alert("Enter Password");
+                document.frm.txtps1.focus();
+                return false;
+            }
+
+            if (document.frm.txtps1.value.length < 6) {
+                alert("Enter Password in length six");
+                document.frm.txtps1.focus();
+                document.frm.txtps1.select();
+                return false;
+            }
+
+            if (document.frm.txtps1.value != document.frm.txtps2.value) {
+                alert("Both passwords are not same");
+                document.frm.txtps1.focus();
+                return false;
+            }
+
+            if (document.frm.ans.value == "") {
+                alert("Enter answer");
+                document.frm.ans.focus();
+                return false;
+            }
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="border">
+
+        <header>
+            <h1>Sign up</h1>
+            <hr><br>
+        </header>
+
+        <main>
+            <div class="div_inputs">
+
+                <form name="frm" method="post" action="index.html">
+
+                    <input type="text" name="txtfn" id="input1" placeholder="Username"><br><br>
+                    <input type="text" name="txttel" id="input1" placeholder="Phone number"><br><br>
+                    <input type="text" name="txtEmail" id="input1" placeholder="Email"><br><br>
+                    <input type="password" name="txtps1" id="input1" placeholder="Password"><br><br>
+                    <input type="password" name="txtps2" id="input1" placeholder="Confirm password"><br>
+
+                    <h4>What is your favorite food ?</h4>
+
+                    <input type="text" name="ans" id="input1" placeholder="Answer as second password"><br><br>
+
+                    <input type="checkbox" id="checkbox1"> I agree to terms and conditions<br><br>
+
+                    <input type="submit" name="btnsub" id="submit1" value="sign up" onclick="return check()"><br><br>
+
+                    alredy have an account ? <a href="login_page.html" target="_blank">Login</a> now <br><br>
+
+                </form>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

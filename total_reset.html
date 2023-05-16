@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total reset</title>
+
+    <style>
+        body {
+            background-image: linear-gradient(to right, rgb(65, 207, 255), rgb(255, 255, 0));
+            text-align: center;
+        }
+
+        main {
+            border: 1px solid black;
+            margin-left: 500px;
+            margin-right: 500px;
+            margin-top: 150px;
+            background-color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #input {
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: groove;
+            background-color: #eee;
+            width: 40%;
+            padding: 2%;
+            border-width: 3px;
+        }
+
+        .form_choose {
+
+            margin-top: 4%;
+            margin-bottom: 1%;
+        }
+
+        #Question {
+            border: 1px solid transparent;
+            padding: 0%;
+            transition: transform 0.2s;
+
+        }
+
+        #submit1 {
+            font-style: normal;
+            transition: transform 0.2s;
+        }
+
+        #submit1:hover{
+            transform: scale(1.3);
+            border-radius: 10% ;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <main>
+
+        <h1>Reset all passwold</h1>
+        <hr>
+        <br>
+        <div class="form_choose">
+
+            <h4>what is your favorite food</h4>
+
+            <input type="text" name="ans" id="input" placeholder="Answer"><br><br><br>
+            
+            <input type="text" id="input" placeholder="make new Answer"><br><br><br>
+
+            <input type="text" id="input" placeholder="New passwold"><br><br><br>
+            <input type="text" id="input" placeholder="Confirm passwold"><br><br><br>
+
+            <a href="login_page.html"><input type="submit" id="submit1" value="RESET"><br><br></a>
+
+    </main>
+
+</body>
+
+</html>
